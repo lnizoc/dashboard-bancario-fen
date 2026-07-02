@@ -1,0 +1,10 @@
+{
+  "buildCommand": "pnpm build",
+  "startCommand": "node dist/index.js",
+  "outputDirectory": "dist",
+  "framework": "other",
+  "nodejs": "22.x",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
