@@ -1,20 +1,5 @@
 {
   "version": 2,
   "buildCommand": "pnpm run build",
-  "outputDirectory": "dist/public",
-  "functions": {
-    "dist/server/index.js": {
-      "runtime": "nodejs20.x"
-    }
-  },
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/dist/server/index.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/dist/public/index.html"
-    }
-  ]
+  "outputDirectory": "dist/public"
 }
