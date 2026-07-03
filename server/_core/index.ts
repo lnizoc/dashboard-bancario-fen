@@ -1,6 +1,11 @@
 import "dotenv/config";
 import express from "express";
 import { createServer } from "http";
+import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 import net from "net";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
@@ -48,7 +53,14 @@ async function startServer() {
   if (process.env.NODE_ENV === "development") {
     await setupVite(app, server);
   } else {
-    serveStatic(app);
+    // Servir archivos estáticos desde dist/public
+    const publicPath = path.join(__dirname, "../../dist/public");
+    app.use(express.static(publicPath));
+
+    // Para todas las otras rutas, servir index.html (SPA)
+    app.get("/*", (req, res) => {
+      res.sendFile(path.join(publicPath, "index.html"));
+    });
   }
 
   const preferredPort = parseInt(process.env.PORT || "3000");
