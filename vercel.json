@@ -3,18 +3,18 @@
   "buildCommand": "pnpm run build",
   "outputDirectory": "dist/public",
   "functions": {
-    "dist/index.js": {
+    "dist/server/index.js": {
       "runtime": "nodejs20.x"
     }
   },
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/dist/index.js"
+      "src": "/api/(.*)",
+      "dest": "/dist/server/index.js"
     },
     {
-      "source": "/(.*)",
-      "destination": "/dist/index.js"
+      "src": "/(.*)",
+      "dest": "/dist/server/index.js"
     }
   ]
 }
