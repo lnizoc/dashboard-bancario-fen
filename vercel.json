@@ -1,6 +1,18 @@
 {
+  "version": 2,
   "buildCommand": "pnpm run build",
-  "outputDirectory": "dist/public",
+  "outputDirectory": "dist",
+  "public": true,
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
   "env": {
     "NODE_ENV": "production"
   }
