@@ -1,9 +1,5 @@
-import { createServer } from 'http';
-import express from 'express';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const express = require('express');
+const path = require('path');
 
 const app = express();
 
@@ -16,4 +12,4 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));
 });
 
-export default app;
+module.exports = app;
