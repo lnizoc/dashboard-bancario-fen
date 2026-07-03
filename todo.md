@@ -1,50 +1,25 @@
-# Dashboard Bancario FEN - TODO
+# Project TODO
 
-## Paso 1: Base de Datos ✅
-- [x] Crear tabla `operaciones` con 25,000 registros
-- [x] Crear tabla `instituciones` con 20 bancos chilenos
-- [x] Crear 6 vistas agregadas (KPIs, serie mensual, por producto, segmento, canal, top instituciones)
-- [x] Crear índices para performance
-- [x] Configurar RLS y permisos
-- [x] Validar credenciales de Supabase y Gemini
+- [ ] **Revisar y corregir el despliegue en Vercel:**
+  - [ ] Identificar la causa raíz del error de despliegue (página en blanco/código JS).
+  - [ ] Implementar una configuración de Vercel que sirva correctamente la SPA (Vite + Express).
+  - [ ] Asegurar que la URL pública funcione y cargue el dashboard.
 
-## Paso 2: Desarrollo del Dashboard
-- [x] Crear servicio de conexión a Supabase
-- [x] Implementar componentes de KPIs (4 métricas)
-- [x] Implementar gráfico de serie temporal (área)
-- [x] Implementar gráfico de distribución por producto (barras)
-- [x] Implementar gráfico de distribución por canal (pie/torta)
-- [x] Implementar gráfico de distribución por segmento (barras apiladas)
-- [x] Crear tabla de operaciones con ordenamiento, búsqueda y paginación
-- [x] Implementar filtros globales (fecha, segmento, producto, región, canal)
-- [x] Conectar filtros con todos los componentes
-- [x] Crear layout con sidebar de navegación
-- [x] Implementar tema claro/oscuro
-- [x] Aplicar estética financiera (azul oscuro + acentos dorados)
+- [ ] **Verificar y alinear datos y filtros con la pauta:**
+  - [ ] Confirmar que los 25,000 registros de operaciones bancarias están siendo utilizados.
+  - [ ] Validar que los 4 KPIs principales se calculan y muestran correctamente.
+  - [ ] Asegurar que los 4 gráficos interactivos funcionan con los datos correctos.
+  - [ ] Verificar que los filtros globales (Segmento, Producto, Canal, Región) están implementados y funcionan.
+  - [ ] Confirmar que la integración con Gemini para análisis automático en español funciona.
 
-## Paso 3: Integración con IA (Gemini)
-- [x] Crear servicio de conexión a Gemini
-- [x] Implementar botón "Analizar"
-- [x] Crear prompt para generar hallazgos en español
-- [x] Generar mínimo 5 insights accionables
-- [x] Mostrar hallazgos en interfaz
-- [x] Validar que los insights sean accionables
+- [ ] **Revisar la arquitectura según la pauta:**
+  - [ ] Asegurar que Supabase se usa para la base de datos.
+  - [ ] Confirmar que Gemini/Google AI Studio se usa para el análisis con IA.
+  - [ ] Verificar que GitHub se usa para el repositorio.
+  - [ ] Asegurar que Vercel se usa para la publicación.
+  - [ ] Confirmar que la clave de IA no toca el navegador (se usa desde el servidor).
 
-## Paso 4: Finalización y Despliegue
-- [x] Crear archivo .env.example (ENV_SETUP.md)
-- [x] Crear archivo README.md con instrucciones
-- [x] Crear archivo AGENTS.md con información de IA
-- [x] Gemini integrado en servidor (tRPC) - API key segura
-- [x] Tema claro/oscuro switchable habilitado
-- [ ] Hacer push a GitHub
-- [ ] Conectar con Vercel
-- [ ] Obtener URL pública final
-
-## Notas
-- Estética: Azul oscuro (#1e3a8a) con acentos dorados (#fbbf24)
-- Responsive: Mobile-first design
-- Datos: 25,000 operaciones de 20 instituciones chilenas
-- IA: Gemini para análisis automático en español
-- Seguridad: Gemini API key en servidor (tRPC), no expuesta en cliente
-- Tema: Modo claro/oscuro switchable
-- Estado: Listo para GitHub y Vercel
+- [ ] **Validación final:**
+  - [ ] Verificar visualmente el dashboard en la URL pública.
+  - [ ] Confirmar que carga datos y los gráficos responden.
+  - [ ] Asegurar que no hay errores en la consola del navegador.
